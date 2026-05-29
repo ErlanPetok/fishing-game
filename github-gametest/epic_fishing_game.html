@@ -631,9 +631,9 @@ function loadGame() {
     minigame.target = 0.3+Math.random()*0.5;
     minigame.direction = Math.random()<0.5?1:-1;
     if(fishCaught.type === "boss") { minigame.speed=0.052; minigame.requiredHits=10; }
-    else if(fishCaught.value>=20) { minigame.speed=0.040; minigame.requiredHits=6; }
-    else if(fishCaught.value>=15) { minigame.speed=0.038; minigame.requiredHits=5; }
-    else if(fishCaught.value>=10) { minigame.speed=0.032; minigame.requiredHits=5; }
+    else if(fishCaught.value>=20) { minigame.speed=0.035; minigame.requiredHits=6; }
+    else if(fishCaught.value>=15) { minigame.speed=0.030; minigame.requiredHits=5; }
+    else if(fishCaught.value>=10) { minigame.speed=0.028; minigame.requiredHits=5; }
     else { minigame.speed=0.026; minigame.requiredHits=4; }
   }
 
