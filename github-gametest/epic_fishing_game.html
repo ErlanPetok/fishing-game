@@ -14,12 +14,13 @@
       -webkit-touch-callout: none;
     }
     html, body {
-      width: 100%;
-      height: 100%;
-      background: #0a1a2e;
-      overflow: hidden;
-      font-family: 'Segoe UI', monospace;
-      position: fixed;
+    width: 100%;
+    height: 100vh; /* Use 'vh' (Viewport Height) instead of 100% */
+    background: #0a1a2e;
+    overflow: hidden;
+    font-family: 'Segoe UI', monospace;
+    position: fixed; /* This is okay, but it can be finicky */
+    overscroll-behavior: none; /* Add this to prevent the page from "bouncing" when you drag */
     }
     canvas {
       display: block;
@@ -94,6 +95,7 @@
 
     /* Hamburger Menu Button */
     .menu-btn {
+      top: env(safe-area-inset-top, 10px);
       position: fixed;
       top: 10px;
       right: 10px;
@@ -128,6 +130,7 @@
       height: 100%;
       pointer-events: none;
       z-index: 50;
+      padding-bottom: env(safe-area-inset-bottom, 20px);
     }
     @media (pointer: coarse) {
       .mobile-controls { display: block; }
@@ -188,7 +191,8 @@
       background: rgba(25, 45, 70, 0.95);
       border: 3px solid #ffd966;
       border-radius: 12px;
-      width: 360px;
+      width: 90%;       /* Use 90% of the screen width */
+      max-width: 400px; /* Don't let it get too wide on tablets/PCs */
       padding: 20px;
       box-shadow: 0 0 20px rgba(0,0,0,0.5);
     }
@@ -631,9 +635,9 @@ function loadGame() {
     minigame.target = 0.3+Math.random()*0.5;
     minigame.direction = Math.random()<0.5?1:-1;
     if(fishCaught.type === "boss") { minigame.speed=0.052; minigame.requiredHits=10; }
-    else if(fishCaught.value>=20) { minigame.speed=0.035; minigame.requiredHits=6; }
-    else if(fishCaught.value>=15) { minigame.speed=0.030; minigame.requiredHits=5; }
-    else if(fishCaught.value>=10) { minigame.speed=0.028; minigame.requiredHits=5; }
+    else if(fishCaught.value>=20) { minigame.speed=0.040; minigame.requiredHits=6; }
+    else if(fishCaught.value>=15) { minigame.speed=0.038; minigame.requiredHits=5; }
+    else if(fishCaught.value>=10) { minigame.speed=0.032; minigame.requiredHits=5; }
     else { minigame.speed=0.026; minigame.requiredHits=4; }
   }
 
