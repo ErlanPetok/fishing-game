@@ -77,8 +77,8 @@
     const skinInput = document.getElementById("skinInput");
 
     // 1. AUDIO SETUP
-    const bgmChill = new Audio('bgm_chill.mp3');
-    const bgmBoss = new Audio('bgm_boss.mp3');
+    const bgmChill = new Audio('github-gametest/bgm_chill.mp3');
+    const bgmBoss = new Audio('github-gametest/bgm_boss.mp3');
     bgmChill.loop = true;
     bgmBoss.loop = true;
 
@@ -617,7 +617,7 @@
         
         if (mouseX >= startButton.x && mouseX <= startButton.x + startButton.w &&
             mouseY >= startButton.y && mouseY <= startButton.y + startButton.h) {
-            window.location.href = "epic_fishing_game.html"; 
+            window.location.href = "github-gametest/epic_fishing_game.html"; 
         }
         
         if (mouseX >= skinButton.x && mouseX <= skinButton.x + skinButton.w &&
@@ -627,7 +627,7 @@
         
         if (mouseX >= quitButton.x && mouseX <= quitButton.x + quitButton.w &&
             mouseY >= quitButton.y && mouseY <= quitButton.y + quitButton.h) {
-            if (confirm("Yakin ingin keluar?")) window.close();
+            if (confirm("Yakin Sensei ingin keluar?")) window.close();
         }
     }
 
