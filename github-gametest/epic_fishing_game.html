@@ -628,17 +628,18 @@ function loadGame() {
     }
   }
 
-  function startMinigame(fishCaught) {
+   function startMinigame(fishCaught) {
     gameState = "minigame";
     minigame.slider = 0.3+Math.random()*0.4;
     minigame.hits = 0;
     minigame.target = 0.3+Math.random()*0.5;
     minigame.direction = Math.random()<0.5?1:-1;
     if(fishCaught.type === "boss") { minigame.speed=0.052; minigame.requiredHits=10; }
-    else if(fishCaught.value>=20) { minigame.speed=0.040; minigame.requiredHits=6; }
-    else if(fishCaught.value>=15) { minigame.speed=0.038; minigame.requiredHits=5; }
-    else if(fishCaught.value>=10) { minigame.speed=0.032; minigame.requiredHits=5; }
-    else { minigame.speed=0.026; minigame.requiredHits=4; }
+    else if(fishCaught.type === "neon") { minigame.speed = 0.050; minigame.requiredHits = 5; } // Added neon!
+    else if(fishCaught.value>=20) { minigame.speed=0.030; minigame.requiredHits=6; }
+    else if(fishCaught.value>=15) { minigame.speed=0.025; minigame.requiredHits=5; }
+    else if(fishCaught.value>=10) { minigame.speed=0.020; minigame.requiredHits=5; }
+    else { minigame.speed=0.010; minigame.requiredHits=4; }
   }
 
   function catchSuccess() {
